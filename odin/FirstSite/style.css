@@ -149,13 +149,17 @@ p {
     height: 40vh;
     background-color: #e5e7eb;
     text-align: end;
+    display: flex;
 }
 
 .sec2-container{
     display: flex;
     flex-direction: column;
     flex: 1;
-    
+    justify-content: center;
+    padding-left: 250px;
+    padding-right: 250px;
+    font-weight: 100;
 }
 
 .sec2-container .content { 
@@ -186,6 +190,7 @@ p {
     display: flex;   
     flex-direction: column;
     align-items: center;
+    color: white;
 }
 
 .sec3-container { 
@@ -195,7 +200,35 @@ p {
     margin-top: 120px;
     background-color: #3882f6;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
 }
+
+.action #first-sentence {
+    font-weight: 700;
+}
+
+.action .second-sentence{
+    font-size: small;
+}
+
+
+.sec3-container .SignUpButton { 
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.sec3-container .SignUpButton a {
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
+    
+}
+
 
 footer { 
     margin: 0;
