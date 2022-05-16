@@ -29,12 +29,53 @@ const changeComputerHand = () => {
 }
 let intervalId = setInterval(changeComputerHand, 50);
 
+const scoreTable = {
+  rock : 0,
+  scissors: 1,
+  paper: -1,
+};
+
+let clickable = true;
+let me = 0;
+let computer = 0;
+
 const clickButton = () => {
-  clearInterval(intervalId);
-  //점수 계산 및 화면 표시
-  setTimeout(()=>{
-    intervalId = setInterval(changeComputerHand, 50);
-  }, 1000);
+  if(clickable){
+    clearInterval(intervalId);
+    clickable = false;
+    
+    const myChoice = event.target.textContent === '바위'
+      ? 'rock'
+      : event.target.textContent === '가위'
+        ? 'scissors'
+        : 'paper';
+    const myScore = scoreTable[myChoice];
+    const computerScore = scoreTable[computerChoice];
+    const diff = myScore - computerScore;
+    console.log(myScore,computerScore,diff);
+    
+    let message;
+    if ([2,-1].includes(diff)){
+      me += 1;
+      message = 'win';
+    } else if([-2,1].includes(diff)){
+      computer += 1;
+      message = 'lose';
+    } else {
+      message = 'tied';
+    }
+    if(me === 2){
+      $score.textContent = `나의 승리 ${me}:${computer}`;
+    } else if (computer === 2){
+      $score.textContent = `컴퓨터 승리 ${me}:${computer}`;
+    } else {
+      $score.textContent = `${message} ${me}:${computer}`;
+      setTimeout(()=>{
+        clickable = true;
+        intervalId = setInterval(changeComputerHand, 50);
+      }, 1000);
+    }
+  }
 };
 
 
@@ -43,48 +84,3 @@ $paper.addEventListener('click', clickButton);
 $rock.addEventListener('click', clickButton);
 
 
-
-
-
-// // function playRound(playerSelection,computerSelection){
-// //   if(
-// //     playerSelection == 2 && computerSelection == 1 ||
-// //     playerSelection == 3 && computerSelection == 2 ||
-// //     playerSelection == 1 && computerSelection == 3
-// //   ){
-// //    console.log("you are win");
-// //   }else if(
-// //     playerSelection == computerSelection
-// //   ){
-// //     console.log("you are tied");
-// //   }else{
-// //     console.log("you are lose");
-// //   }
-// // }
-
-// // function computerPlay(){
-// //   return (Math.floor(Math.random()*10)) % 3 + 1;
-// // }
-
-// function playerPlay(){
-//   const Prompt = prompt("enter your weapon");
-//   const Value = console.log(Prompt);
-
-//   if(Value === "rock"){
-//     Value === 1}
-//   else if (Value === "paper"){
-//     Value ===2}
-// //   else{Value ===3};
-//   return 
-// }
-
-
-// // const computerSelection = computerPlay();
-// const playerSelection = playerPlay();
-
-
-
-
-// const playerSelection = "rock";
-// console.log(computerSelection);
-// console.log(playRound(playerSelection,computerSelection));
