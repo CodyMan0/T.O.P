@@ -1,0 +1,57 @@
+
+body {
+  padding: 0;
+  margin: 0;
+}  
+
+.board{
+
+    width: 80%;
+    height: 80%;
+    display: grid;
+}
+
+.flex-container{
+height: 100vh;
+width: 100vw;
+display: flex;
+flex-direction: column;
+align-items: center;
+background: linear-gradient(rgba(96,79,252,0.099),white);
+}
+.board {
+  display: grid;
+  background-color: white;
+
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100px ;
+  min-width: 100px;
+  max-width: 600px;
+  max-height: 600px;
+  width: 50vw;
+  height: 50vw;
+  
+}
+.buttons{
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 0.3em 1.2em;
+  margin: 0 0.3em 0.3em 0;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.2s;
+}
+button:hover{
+  cursor: pointer;
+}
+input {
+  width: 50px;
+}
