@@ -1,0 +1,172 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box
+}
+
+@font-face {
+  font-family: Norse-Bold;
+  src: url(./assets/Norse-Bold.woff);
+}
+body {
+  max-height: 100vh;
+}
+
+.container { 
+  width: 100vw;
+  height: 100vh;
+  display: flex
+}
+
+#right-container {
+  width: 65vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.phrase-section{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:whitesmoke;
+}
+.phrase-section h2 {
+  width: 90%;
+  height: 50%;
+  
+}
+
+.phrase-section > h2 > p {
+  padding-top: 10px;
+}
+
+.signup-section {
+  flex-grow: 1;
+}
+
+.title {
+  margin-top: 10px;
+  padding-left: 5%;
+}
+form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+form .input-bg-container {
+  margin-right: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-basis: 85%
+  
+}
+
+form .input-sm-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+form .input-sm-container input {
+  width: 350px;
+  height: 40px;
+  border: 1px solid #E5E7EB;
+  border-radius: 3px;
+  font-size:medium;
+}
+  
+form .input-sm-container input[type="password"]:invalid {
+  border-color: red;
+  
+}
+
+.create-section {
+  flex-grow: 1;
+  background-color:whitesmoke;
+  padding-left: 5%;
+}
+
+button {
+  background-color: #596D48;
+  border: none;
+  color: white;
+  padding: 12px 50px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 8px;
+  font-weight:900;
+  margin-left: 5%;
+  margin-bottom: 20px;
+  width: 300px;
+}
+
+
+.create-section .button-text{
+  font-weight: 300;
+}
+.create-section .button-text a{
+  color: #596D48;
+  text-decoration: none;
+  margin-left: 5px;
+  font-weight: 600;
+}
+
+#left-container {
+  width: 35vw;
+  height: 100vh;
+  position: relative;
+}
+
+.image1-container img {
+  width:100%;
+  height:100%;
+  position: absolute;
+}
+
+.image2-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  top: 10vh;
+  width: 35vw;
+  height: 15vh;
+  opacity: 0.5;
+}
+
+.image2-container img {
+  height: 80%;
+  flex: 1;
+  padding-left: 4rem;
+  object-fit: contain;
+}
+
+  
+
+
+.image2-container .image2-text {
+  color: aliceblue;
+  font-family: Norse-Bold;
+  flex: 1;
+  
+  font-size: 150%;
+}
+
+footer {
+  margin-left: 20%;
+  position: absolute;
+  color: white;
+  top: 95vh;
+  flex: 1;
+}
+
+footer > a {
+  text-decoration: none;
+}
