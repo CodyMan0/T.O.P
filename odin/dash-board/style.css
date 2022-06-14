@@ -1,0 +1,195 @@
+
+:root {
+  --card-font-color: rgb(39, 39, 39);
+}
+  * { 
+  padding: 0;
+  margin: 0;
+  font-family: 'Gentium Plus', serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: repeat(3, auto);
+
+}
+.sidebar {
+  border: solid 1px blue;
+  grid-row: 1 / 4;
+  background-color: #7dd3fc;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .logo {
+  color: #FFFFFF;
+  padding: 10px;
+
+}
+
+.sidebar .menu1,
+.sidebar .menu2 {
+  flex: 1 1 1;
+  display: flex;
+  padding-left: 10px;
+  padding-top: 50px;
+ 
+}
+
+.menu1 ul,.menu2 ul {
+  font-size: 30px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+ul > li{ 
+  color: white; 
+}
+
+
+.header {
+  display: flex;
+  padding: 10px;
+  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.1);
+}
+
+.header .search {
+  flex: 2 1 0;
+  display: flex;
+  align-items: center;
+}
+
+.header .search img { 
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.header .search #search{
+  flex: 1 1 0 ;
+  height: 30px;
+  background-color:#bccbde;
+  border-style: none;
+  border-radius: 20px;
+ 
+}
+
+.header .profile {
+  flex: 1 1 0;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  
+}
+
+.profileImage1 {
+  width: 25px;
+  height: 25px;
+  padding-right: 20px;
+  align-self: center;
+  
+}
+.profileImage2  { 
+  width: 50px;
+  height: 50px;
+  padding-right: 20px;
+}
+
+.profile h2 {
+  padding-right: 20px;
+  align-self: center;
+}
+
+.nav { 
+  display: flex;
+
+  
+}
+
+.nav .bigprofile {
+  flex: 1 1 0;
+  position: relative;
+  display: flex;
+}
+
+.bigprofile .profileImage3 {
+  width: 100px;
+  height: 100px;
+  align-self: center;
+  padding-left: 10px;
+  border-radius: 10px;
+  
+
+}
+.smallprofile {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav .buttons {
+  flex: 1 1 0;
+  align-self: center;
+  
+}
+
+.buttons .b-container { 
+  display: flex;
+  justify-content: space-evenly;
+  padding-left: 30px;
+}
+
+.buttons .b-container p { 
+  color: aliceblue;
+  background-color:#7dd3fc;
+  padding: 10px 30px;
+  border-radius: 20px;
+}
+
+
+.article { 
+  grid-column: 2/ 3;
+  display: grid;
+  background-color: #bccbde;
+  grid-template-columns: 4fr 1fr;
+
+}
+
+.article .content { 
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  grid-template-rows: repeat(3,1fr);
+  gap: 25px;
+  padding: 40px 40px;
+}
+
+.content .card {
+  display: grid;
+  background-color: #FFFFFF;
+  color: black;
+  text-align: center;
+  
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  border-left: orange 10px solid;
+  /* 이거 생각하는데 20분 걸림... */
+}
+
+.card div {
+  justify-self: end;
+}
+
+.card h2{ 
+margin-top: 20px;
+}
+
+.card p { 
+  padding-bottom: 40px;
+}
+
+.card img {
+  margin-left: 15px;
+  padding-right: 10px;
+}
+
