@@ -11,7 +11,6 @@
 .container {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: repeat(3, auto);
 
 }
 .sidebar {
@@ -22,10 +21,16 @@
   flex-direction: column;
 }
 
+
 .sidebar .logo {
   color: #FFFFFF;
   padding: 10px;
+  display: flex;
+}
 
+.logo > img { 
+  padding-right: 20px;
+  width: 4rem;
 }
 
 .sidebar .menu1,
@@ -48,6 +53,10 @@ ul > li{
   color: white; 
 }
 
+ul .name {
+  padding: 0 25px;
+
+}
 
 .header {
   display: flex;
@@ -69,7 +78,8 @@ ul > li{
 .header .search #search{
   flex: 1 1 0 ;
   height: 30px;
-  background-color:#bccbde;
+  background-color:#ced7e3;
+
   border-style: none;
   border-radius: 20px;
  
@@ -125,12 +135,12 @@ ul > li{
 .smallprofile {
   display: flex;
   flex-direction: column;
+  font-size: larger;
 }
 
 .nav .buttons {
   flex: 1 1 0;
   align-self: center;
-  
 }
 
 .buttons .b-container { 
@@ -142,23 +152,28 @@ ul > li{
 .buttons .b-container p { 
   color: aliceblue;
   background-color:#7dd3fc;
-  padding: 10px 30px;
+  padding: 15px 40px;
   border-radius: 20px;
+  font-weight:bolder;
+  font-size: 20px;
 }
 
 
 .article { 
-  grid-column: 2/ 3;
+  grid-column:2/ 3;
   display: grid;
   background-color: #bccbde;
-  grid-template-columns: 4fr 1fr;
+  grid-template-areas:
+  "contents contents contents contents contents announcements"
+  "contents contents contents contents contents trending";
 
 }
 
 .article .content { 
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  grid-template-rows: repeat(3,1fr);
+  grid-area: contents;
+  grid-template-columns: repeat(2, minmax(250px, 100%));
+  grid-template-rows: repeat(3, minmax(250px, 100%));
   gap: 25px;
   padding: 40px 40px;
 }
@@ -193,3 +208,60 @@ margin-top: 20px;
   padding-right: 10px;
 }
 
+.announcements {
+  position: relative;
+  display: grid;
+  grid-area: announcements;
+  border-radius: 10px;
+  margin: 20px;
+  background-color: rgb(255, 255, 255);
+  height: fit-content;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  align-self: center;
+}
+.announcement-card {
+    display: flex;
+    flex-wrap: wrap;
+
+
+}
+
+
+#noborder {
+  border-top: none;
+}
+
+.announcements p {
+  width: 80%;
+  margin-left: 25px;
+  text-align: center;
+  
+}
+
+.announcements h4 {
+  border-top: gray 2px solid;
+  text-align: center;
+  font-size: 20px;
+}
+
+
+.trending {
+  position: relative;
+  grid-area: trending;
+  border-radius: 10px;
+  background-color: white;
+  margin: 20px;
+  align-items: center;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  padding: 10px;
+  align-self: center;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+.trending div {
+  display: grid;
+  position: relative;
+  grid-template-columns: min-content 2fr;
+  width: 150px;
+}
